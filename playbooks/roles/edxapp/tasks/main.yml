@@ -65,8 +65,8 @@
   file:
     path: "{{ COMMON_LOG_DIR }}/tracking"
     state: directory
-    owner: syslog
-    group: syslog
+    owner: root
+    group: root
   tags:
     - install
     - install:base
@@ -76,7 +76,8 @@
     path: "{{ COMMON_LOG_DIR }}/tracking/tracking.log"
     state: touch
     owner: syslog
-    group: syslog
+    group: adm
+    mode: "0640"
   tags:
     - install
     - install:base
